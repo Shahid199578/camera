@@ -1,14 +1,35 @@
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ProductCard from './ProductCard';
+import productsData from '../data/products.json';
 
-const relatedProducts = [
-    { title: 'Intex IP Bullet 5MP Pro CCTV Camera', price: '₹ 11,000.00', image: '/assets/bullet_camera.png' },
-    { title: 'Intex IP 5MP Dome Pro CCTV Camera', price: '₹ 10,500.00', image: '/assets/dome_camera.png' },
-    { title: 'Intex IP Bullet 5MP CCTV Camera', price: '₹ 9,500.00', image: '/assets/bullet_camera.png' },
-    { title: 'Intex IP 5MP Dome CCTV Camera', price: '₹ 9,000.00', image: '/assets/dome_camera.png' },
-];
+interface Product {
+    id?: string;
+    title: string;
+    price: string;
+    image: string;
+    description?: string;
+    specifications?: { label: string; value: string; }[];
+    imageSettings?: string[];
+}
 
-export default function RelatedProducts() {
+interface RelatedProductsProps {
+    onProductClick?: (product: Product) => void;
+}
+
+export default function RelatedProducts({ onProductClick }: RelatedProductsProps) {
+    const [randomProducts, setRandomProducts] = useState<Product[]>([]);
+
+    const scrambleProducts = () => {
+        const allProducts = Object.values(productsData).flat() as Product[];
+        const shuffled = [...allProducts].sort(() => 0.5 - Math.random());
+        setRandomProducts(shuffled.slice(0, 4));
+    };
+
+    useEffect(() => {
+        scrambleProducts();
+    }, []);
+
     return (
         <section className="py-24 bg-white border-t border-gray-50">
             <div className="max-w-7xl mx-auto px-4 lg:px-8">
@@ -18,23 +39,24 @@ export default function RelatedProducts() {
                         <div className="h-1 w-12 bg-red-600" />
                     </div>
                     <div className="flex space-x-2">
-                        <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-intex-blue hover:border-intex-blue hover:text-white transition-all">
-                            <ChevronLeft className="w-5 h-5" />
+                        <button onClick={scrambleProducts} className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-red-600 hover:border-red-600 hover:text-white transition-all text-gray-400 group">
+                            <ChevronLeft className="w-5 h-5 group-hover:block" />
                         </button>
-                        <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-intex-blue hover:border-intex-blue hover:text-white transition-all">
-                            <ChevronRight className="w-5 h-5" />
+                        <button onClick={scrambleProducts} className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-red-600 hover:border-red-600 hover:text-white transition-all text-gray-400 group">
+                            <ChevronRight className="w-5 h-5 group-hover:block" />
                         </button>
                     </div>
                 </div>
 
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                    {relatedProducts.map((product, i) => (
+                    {randomProducts.map((product, i) => (
                         <ProductCard
-                            key={i}
+                            key={product.id || i}
                             title={product.title}
                             price={product.price}
                             image={product.image}
-                            badge={i === 0 ? "Bestseller" : undefined}
+                            badge={i === 0 ? "Trending" : undefined}
+                            onClick={() => onProductClick && onProductClick(product)}
                         />
                     ))}
                 </div>

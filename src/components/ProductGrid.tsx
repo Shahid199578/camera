@@ -3,50 +3,33 @@ import { Settings2, Grid, List, LayoutGrid, Layout } from 'lucide-react';
 import ProductCard from './ProductCard';
 import FilterSidebar from './FilterSidebar';
 
-const cctvProducts = [
-    { title: 'Intex IP Bullet 5MP Pro CCTV Camera', price: '₹ 11,000.00', image: '/assets/bullet_camera.png' },
-    { title: 'Intex IP 5MP Dome Pro CCTV Camera', price: '₹ 10,500.00', image: '/assets/dome_camera.png' },
-    { title: 'Intex IP Bullet 5MP CCTV Camera', price: '₹ 9,500.00', image: '/assets/bullet_camera.png' },
-    { title: 'Intex IP 5MP Dome CCTV Camera', price: '₹ 9,000.00', image: '/assets/dome_camera.png' },
-    { title: 'Intex IP 4MP Bullet CCTV Camera', price: '₹ 8,000.00', image: '/assets/bullet_camera.png' },
-    { title: 'Intex IP 4MP Dome CCTV Camera', price: '₹ 7,500.00', image: '/assets/dome_camera.png' },
-    { title: 'Intex AHD BULLET 5MP CCTV Camera', price: '₹ 6,500.00', image: '/assets/bullet_camera.png' },
-    { title: 'Intex AHD Dome 5MP CCTV Camera', price: '₹ 6,000.00', image: '/assets/dome_camera.png' },
-    { title: 'Intex AHD BULLET 2.4MP CCTV Camera', price: '₹ 4,500.00', image: '/assets/bullet_camera.png' },
-    { title: 'Intex AHD Dome 2.4MP CCTV Camera', price: '₹ 4,000.00', image: '/assets/dome_camera.png' },
-];
+import productsData from '../data/products.json';
+import categoryNames from '../data/categories.json';
 
-const nvrProducts = [
-    { title: 'Intex 4 Channel NVR 4K', price: '₹ 8,500.00', image: '/assets/biometrics.png' },
-    { title: 'Intex 8 Channel DVR HD', price: '₹ 12,000.00', image: '/assets/biometrics.png' },
-    { title: 'Intex 16 Channel NVR Pro Series', price: '₹ 21,500.00', image: '/assets/biometrics.png' },
-    { title: 'Intex 32 Channel AI NVR System', price: '₹ 45,000.00', image: '/assets/biometrics.png' },
-];
-
-const biometricsProducts = [
-    { title: 'Intex Face Recognition Terminal', price: '₹ 15,000.00', image: '/assets/biometrics.png' },
-    { title: 'Intex Fingerprint Access Control', price: '₹ 6,500.00', image: '/assets/biometrics.png' },
-    { title: 'Intex RFID Card Reader', price: '₹ 3,500.00', image: '/assets/biometrics.png' },
-    { title: 'Intex Multi-Door Controller', price: '₹ 18,000.00', image: '/assets/biometrics.png' },
-];
+interface Product {
+    id: string;
+    title: string;
+    price: string;
+    image: string;
+    description: string;
+    specifications?: { label: string; value: string; }[];
+    imageSettings?: string[];
+}
 
 interface ProductGridProps {
-    onProductClick: () => void;
+    onProductClick: (product: Product) => void;
     categoryId?: string;
 }
 
 export default function ProductGrid({ onProductClick, categoryId = 'cctv' }: ProductGridProps) {
     const [isFilterOpen, setIsFilterOpen] = useState(false);
 
-    let products = cctvProducts;
-    let title = 'Camera';
-    if (categoryId === 'nvr') {
-        products = nvrProducts;
-        title = 'NVR & DVR Systems';
-    } else if (categoryId === 'biometrics') {
-        products = biometricsProducts;
-        title = 'Biometric Devices';
-    }
+    const safeCategoryId = categoryId as keyof typeof productsData;
+    // We cast this to ensure TS knows it's an array of products, skipping the 'categories' key
+    const products: Product[] = (productsData[safeCategoryId] as Product[]) || productsData['cctv'];
+
+    // @ts-ignore - indexing into the JSON categories object
+    const title = (categoryNames as Record<string, string>)[categoryId] || 'Camera';
 
     return (
         <section className="py-12 bg-white">
@@ -98,7 +81,7 @@ export default function ProductGrid({ onProductClick, categoryId = 'cctv' }: Pro
                                 title={product.title}
                                 price={product.price}
                                 image={product.image}
-                                onClick={onProductClick}
+                                onClick={() => onProductClick(product)}
                             />
                         </div>
                     ))}

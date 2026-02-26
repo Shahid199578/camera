@@ -1,16 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const images = [
-    "/assets/bullet_camera.png",
-    "/assets/bullet_camera.png",
-    "/assets/bullet_camera.png",
-    "/assets/bullet_camera.png"
-];
-
-export default function ProductGallery() {
+export default function ProductGallery({ image }: { image?: string }) {
     const [activeIndex, setActiveIndex] = useState(0);
+    const [images, setImages] = useState<string[]>([]);
+
+    useEffect(() => {
+        const primaryImage = image || "";
+        setImages([
+            primaryImage,
+            primaryImage,
+            primaryImage,
+            primaryImage
+        ]);
+        setActiveIndex(0);
+    }, [image]);
 
     return (
         <div className="flex flex-col md:flex-row-reverse gap-6">

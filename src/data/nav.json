@@ -1,0 +1,87 @@
+[
+    {
+        "name": "Electronics",
+        "id": "electronics",
+        "subcategories": [
+            {
+                "name": "LED TVs",
+                "view": "category-led-tvs",
+                "image": "/assets/dome_camera.png"
+            },
+            {
+                "name": "Washing Machines",
+                "view": "category-washing-machines",
+                "image": "/assets/bullet_camera.png"
+            }
+        ]
+    },
+    {
+        "name": "Electricals",
+        "id": "electricals",
+        "subcategories": [
+            {
+                "name": "Ceiling Fans",
+                "view": "category-fans",
+                "image": "/assets/biometrics.png"
+            },
+            {
+                "name": "Water Heaters",
+                "view": "category-heaters",
+                "image": "/assets/dome_camera.png"
+            }
+        ]
+    },
+    {
+        "name": "Industrial Equipment",
+        "id": "industrial",
+        "subcategories": [
+            {
+                "name": "Heavy Machinery",
+                "view": "category-machinery",
+                "image": "/assets/bullet_camera.png"
+            },
+            {
+                "name": "Power Tools",
+                "view": "category-tools",
+                "image": "/assets/biometrics.png"
+            }
+        ]
+    },
+    {
+        "name": "IT Accessories",
+        "id": "it-accessories",
+        "subcategories": [
+            {
+                "name": "Keyboards",
+                "view": "category-keyboards",
+                "image": "/assets/dome_camera.png"
+            },
+            {
+                "name": "Power Banks",
+                "view": "category-powerbanks",
+                "image": "/assets/bullet_camera.png"
+            }
+        ]
+    },
+    {
+        "name": "Security & Surveillance",
+        "id": "security",
+        "subcategories": [
+            {
+                "name": "Camera",
+                "view": "category-cctv",
+                "image": "/assets/bullet_camera.png"
+            },
+            {
+                "name": "NVR",
+                "view": "category-nvr",
+                "image": "/assets/bullet_camera.png"
+            },
+            {
+                "name": "Biometrics",
+                "view": "category-biometrics",
+                "image": "/assets/biometrics.png"
+            }
+        ]
+    }
+]

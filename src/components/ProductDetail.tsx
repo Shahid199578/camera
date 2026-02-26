@@ -4,8 +4,31 @@ import ProductInfo from './ProductInfo';
 import ProductSpecifications from './ProductSpecifications';
 import RelatedProducts from './RelatedProducts';
 
-export default function ProductDetail() {
+interface ProductDetailProps {
+    product?: {
+        id?: string;
+        title: string;
+        price: string;
+        image: string;
+        description?: string;
+        specifications?: any[];
+    } | null;
+    onProductClick?: (product: any) => void;
+}
+
+export default function ProductDetail({ product, onProductClick }: ProductDetailProps) {
     const [activeTab, setActiveTab] = useState('OVERVIEW');
+
+    // Extract directly from payload
+    const displayImage = product?.image || "";
+    const displayTitle = product?.title || "";
+    const displayPrice = product?.price || "";
+    const displayDescription = product?.description || "";
+
+    const hasSpecs = product?.specifications && product.specifications.length > 0;
+
+    const tabs = ['OVERVIEW'];
+    if (hasSpecs) tabs.push('SPECIFICATIONS');
 
     return (
         <div className="bg-white">
@@ -13,8 +36,8 @@ export default function ProductDetail() {
             {/* Main Detail Grid */}
             <div className="max-w-[1440px] mx-auto px-4 lg:px-12 pb-24 border-b border-gray-100">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-                    <ProductGallery />
-                    <ProductInfo />
+                    <ProductGallery image={displayImage} />
+                    <ProductInfo title={displayTitle} price={displayPrice} />
                 </div>
             </div>
 
@@ -22,7 +45,7 @@ export default function ProductDetail() {
             <div className="sticky top-[80px] z-40 bg-black text-white">
                 <div className="max-w-[1440px] mx-auto px-4 lg:px-12">
                     <div className="flex justify-center space-x-12">
-                        {['OVERVIEW', 'SPECIFICATIONS'].map((tab) => (
+                        {tabs.map((tab) => (
                             <button
                                 key={tab}
                                 onClick={() => setActiveTab(tab)}
@@ -45,24 +68,24 @@ export default function ProductDetail() {
                     <div className="flex flex-col lg:flex-row gap-16 items-center max-w-5xl mx-auto">
                         <div className="lg:w-1/2 flex justify-center">
                             <img
-                                src="/assets/dome_camera.png"
-                                alt="Overview Camera"
+                                src={displayImage}
+                                alt="Overview"
                                 className="w-full max-w-sm object-contain drop-shadow-2xl"
                             />
                         </div>
                         <div className="lg:w-1/2">
                             <p className="text-gray-800 leading-[1.8] text-base font-medium lg:text-left text-center">
-                                This high-resolution security camera features a 1/3" 5.0 Mega Pixel CMOS sensor with a 5 Mega Pixel (3.6mm) lens, providing crystal-clear images at a resolution of 2592(H) × 1920(V). It delivers excellent low-light performance with a minimum illumination of 0.01Lux (F1.2, IR ON) and offers IR coverage up to 20 meters using 12 LEDs. Additional features include 2D noise reduction, lightning protection, and anti-fog functionality for reliable operation in diverse conditions. The camera's plastic body is durable, and it supports multiple angle adjustments for optimal coverage.
+                                {displayDescription}
                             </p>
                         </div>
                     </div>
                 ) : (
-                    <ProductSpecifications />
+                    <ProductSpecifications product={product} />
                 )}
             </div>
 
             {/* Related Products Section */}
-            <RelatedProducts />
+            <RelatedProducts onProductClick={onProductClick} />
         </div>
     );
 }

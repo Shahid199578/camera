@@ -20,11 +20,11 @@ export default function Footer({ onNavigate }: FooterProps) {
         {
             title: "SHOP",
             links: [
-                { name: "IP Cameras", view: "landing" },
-                { name: "HD Cameras", view: "landing" },
-                { name: "PTZ Cameras", view: "landing" },
-                { name: "NVR & DVR Systems", view: "landing" },
-                { name: "Biometrics & Access", view: "landing" }
+                { name: "Electronics", view: "category-led-tvs" },
+                { name: "Electricals", view: "category-fans" },
+                { name: "Industrial Equipment", view: "category-machinery" },
+                { name: "IT Accessories", view: "category-keyboards" },
+                { name: "Security & Surveillance", view: "category-cctv" }
             ]
         },
         {

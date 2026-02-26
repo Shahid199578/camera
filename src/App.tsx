@@ -14,29 +14,62 @@ import HelpPage from './components/HelpPage';
 import ServicesPage from './components/ServicesPage';
 import LandingPage from './components/LandingPage';
 
+import productsData from './data/products.json';
+
 function App() {
-  const [currentView, setCurrentView] = useState<string>(
-    window.location.hash ? window.location.hash.replace('#', '') : 'landing'
-  );
+  const getViewFromPath = () => {
+    const path = window.location.pathname.replace(/^\//, '');
+    if (path.startsWith('detail/')) {
+      return 'detail';
+    }
+    return path || 'landing';
+  };
+
+  const getProductFromPath = () => {
+    const path = window.location.pathname.replace(/^\//, '');
+    if (path.startsWith('detail/')) {
+      const id = path.split('/')[1];
+      const allProducts = Object.values(productsData).flat();
+      // @ts-ignore
+      return allProducts.find(p => p.id === id) || null;
+    }
+    return null;
+  };
+
+  const [currentView, setCurrentView] = useState<string>(getViewFromPath());
   const footerRef = useRef<HTMLDivElement>(null);
   const [footerHeight, setFooterHeight] = useState(650);
+  const [selectedProduct, setSelectedProduct] = useState<{
+    id?: string;
+    title: string;
+    price: string;
+    image: string;
+    description?: string;
+    specifications?: any[];
+  } | null>(getProductFromPath());
 
-  // Sync state to URL hash
+  // Sync state to URL path (History API)
   useEffect(() => {
-    window.location.hash = currentView;
-  }, [currentView]);
+    let newPath = currentView === 'landing' ? '/' : `/${currentView}`;
 
-  // Sync URL hash back to state (e.g. forward/back buttons or manual entry)
+    // Add the product ID to the URL if we are on the detail view
+    if (currentView === 'detail' && selectedProduct?.id) {
+      newPath = `/detail/${selectedProduct.id}`;
+    }
+
+    if (window.location.pathname !== newPath) {
+      window.history.pushState(null, '', newPath);
+    }
+  }, [currentView, selectedProduct]);
+
+  // Handle browser back/forward buttons
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '');
-      if (hash && hash !== currentView) {
-        setCurrentView(hash || 'landing');
-      }
+    const handlePopState = () => {
+      setCurrentView(getViewFromPath());
     };
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, [currentView]);
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   // Scroll to top on view change
   useEffect(() => {
@@ -66,8 +99,11 @@ function App() {
       const categoryId = currentView.replace('category-', '');
       return (
         <>
-          <CollectionHero />
-          <ProductGrid categoryId={categoryId} onProductClick={() => setCurrentView('detail')} />
+          <CollectionHero categoryId={categoryId} />
+          <ProductGrid categoryId={categoryId} onProductClick={(product) => {
+            setSelectedProduct(product);
+            setCurrentView('detail');
+          }} />
           <CollectionSEOContent />
         </>
       );
@@ -83,7 +119,15 @@ function App() {
           </>
         );
       case 'detail':
-        return <ProductDetail />;
+        return (
+          <ProductDetail
+            product={selectedProduct}
+            onProductClick={(product) => {
+              setSelectedProduct(product);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          />
+        );
       default:
         return <LandingPage onNavigate={setCurrentView} />;
     }

@@ -1,12 +1,15 @@
 import { Facebook, Twitter, Linkedin, PhoneCall, Download, Info, Scale, Heart, Check } from 'lucide-react';
 
-export default function ProductInfo() {
+export default function ProductInfo({ title, price }: { title?: string, price?: string }) {
+    const displayTitle = title || "";
+    const displayPrice = price || "";
+
     return (
         <div className="flex flex-col space-y-6">
             {/* Title & Top Icons */}
             <div className="flex justify-between items-start pt-2">
                 <h1 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight tracking-tight">
-                    Intex IP Bullet 5MP Pro CCTV Camera
+                    {displayTitle}
                 </h1>
                 <div className="flex items-center space-x-4 mt-2">
                     <button className="text-gray-400 hover:text-intex-blue transition-colors">
@@ -23,7 +26,7 @@ export default function ProductInfo() {
             {/* Pricing Section */}
             <div className="space-y-2 py-4">
                 <div className="flex items-center">
-                    <span className="text-3xl font-black text-gray-900 tracking-tighter">₹ 11,000.00</span>
+                    <span className="text-3xl font-black text-gray-900 tracking-tighter">{displayPrice}</span>
                 </div>
                 <p className="text-xs font-bold text-gray-900 opacity-90">
                     MRP (Per Unit) Inclusive of all taxes

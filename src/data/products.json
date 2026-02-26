@@ -1,0 +1,469 @@
+{
+    "cctv": [
+        {
+            "id": "cctv-1",
+            "title": "Intex IP Bullet 5MP Pro CCTV Camera",
+            "price": "₹ 11,000.00",
+            "image": "/assets/bullet_camera.png",
+            "description": "This high-resolution security camera features a 1/3\" 5.0 Mega Pixel CMOS sensor delivering crystal-clear images. Designed for uncompromising surveillance.",
+            "specifications": [
+                {
+                    "label": "Model Name",
+                    "value": "IP Bullet 5MP Pro Outdoor Camera"
+                },
+                {
+                    "label": "Resolution",
+                    "value": "5MP Full HD (2880×1624)"
+                },
+                {
+                    "label": "Features",
+                    "value": "Day/Night mode, WDR, Full HD, Mic & Speaker, Audio/Alarm"
+                },
+                {
+                    "label": "Night Vision",
+                    "value": "Black light full-color, intelligent dual light, infrared mode"
+                },
+                {
+                    "label": "Face Recognition",
+                    "value": "Intelligent face detection without exposure"
+                }
+            ],
+            "imageSettings": [
+                "Automatic white balance",
+                "Digital wide dynamic (DWDR) & backlight compensation",
+                "Privacy occlusion area setting supported",
+                "Mirror function supported"
+            ]
+        },
+        {
+            "id": "cctv-2",
+            "title": "Intex IP 5MP Dome Pro CCTV Camera",
+            "price": "₹ 10,500.00",
+            "image": "/assets/dome_camera.png",
+            "description": "A high-performance IP dome camera with 5MP resolution, perfect for indoor security with wide angle coverage.",
+            "specifications": [
+                {
+                    "label": "Model Name",
+                    "value": "IP 5MP Dome Pro Indoor Camera"
+                },
+                {
+                    "label": "Resolution",
+                    "value": "5MP Full HD"
+                },
+                {
+                    "label": "Features",
+                    "value": "360-degree rotation, Vandal-proof, Built-in Mic"
+                },
+                {
+                    "imageSettings": [
+                        "Automatic white balance",
+                        "Backlight compensation",
+                        "Privacy zoning"
+                    ]
+                }
+            ]
+            
+        },
+        {
+            "id": "cctv-3",
+            "title": "Intex IP Bullet 5MP CCTV Camera",
+            "price": "₹ 9,500.00",
+            "image": "/assets/bullet_camera.png",
+            "description": "Reliable 5MP IP Bullet camera featuring night vision and weather-resistant casing.",
+            "specifications": [
+                {
+                    "label": "Model",
+                    "value": "IP Bullet 5MP"
+                },
+                {
+                    "label": "Resolution",
+                    "value": "5MP"
+                },
+                {
+                    "imageSettings": [
+                        "Auto White Balance"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "cctv-4",
+            "title": "Intex IP 5MP Dome CCTV Camera",
+            "price": "₹ 9,000.00",
+            "image": "/assets/dome_camera.png",
+            "description": "Standard 5MP Dome camera with smart IR and easy installation.",
+            "specifications": [
+                {
+                    "label": "Model",
+                    "value": "IP 5MP Dome"
+                },
+                {
+                    "label": "Resolution",
+                    "value": "5MP"
+                },
+                {
+                    "label": "Infrared",
+                    "value": "Smart IR"
+                },
+                {
+                    "imageSettings": [
+                        "Auto White Balance"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "cctv-5",
+            "title": "Intex IP 4MP Bullet CCTV Camera",
+            "price": "₹ 8,000.00",
+            "image": "/assets/bullet_camera.png",
+            "description": "4MP high-definition bullet camera for outdoor surveillance.",
+            "specifications": []
+            
+        },
+        {
+            "id": "cctv-6",
+            "title": "Intex IP 4MP Dome CCTV Camera",
+            "price": "₹ 7,500.00",
+            "image": "/assets/dome_camera.png",
+            "description": "4MP dome camera providing clear, crisp imagery for indoor spaces.",
+            "specifications": []
+            
+        },
+        {
+            "id": "cctv-7",
+            "title": "Intex AHD BULLET 5MP CCTV Camera",
+            "price": "₹ 6,500.00",
+            "image": "/assets/bullet_camera.png",
+            "description": "Analog High Definition (AHD) 5MP bullet camera.",
+            "specifications": []
+            
+        },
+        {
+            "id": "cctv-8",
+            "title": "Intex AHD Dome 5MP CCTV Camera",
+            "price": "₹ 6,000.00",
+            "image": "/assets/dome_camera.png",
+            "description": "AHD 5MP dome camera for seamless integration into existing analog systems.",
+            "specifications": []
+        },
+        {
+            "id": "cctv-9",
+            "title": "Intex AHD BULLET 2.4MP CCTV Camera",
+            "price": "₹ 4,500.00",
+            "image": "/assets/bullet_camera.png",
+            "description": "Analog HD 2.4MP bullet camera for basic security needs.",
+            "specifications": []
+            
+        },
+        {
+            "id": "cctv-10",
+            "title": "Intex AHD Dome 2.4MP CCTV Camera",
+            "price": "₹ 4,000.00",
+            "image": "/assets/dome_camera.png",
+            "description": "Analog HD 2.4MP dome camera.",
+            "specifications": []
+            
+        }
+    ],
+    "nvr": [
+        {
+            "id": "nvr-1",
+            "title": "Intex 4 Channel NVR 4K",
+            "price": "₹ 8,500.00",
+            "image": "/assets/biometrics.png",
+            "description": "4-channel Network Video Recorder supporting 4K resolution."
+        },
+        {
+            "id": "nvr-2",
+            "title": "Intex 8 Channel DVR HD",
+            "price": "₹ 12,000.00",
+            "image": "/assets/biometrics.png",
+            "description": "8-channel Digital Video Recorder with high-definition support."
+        },
+        {
+            "id": "nvr-3",
+            "title": "Intex 16 Channel NVR Pro Series",
+            "price": "₹ 21,500.00",
+            "image": "/assets/biometrics.png",
+            "description": "Professional 16-channel NVR for enterprise solutions."
+        },
+        {
+            "id": "nvr-4",
+            "title": "Intex 32 Channel AI NVR System",
+            "price": "₹ 45,000.00",
+            "image": "/assets/biometrics.png",
+            "description": "Advanced 32-channel NVR powered by AI for intelligent analytics."
+        }
+    ],
+    "biometrics": [
+        {
+            "id": "bio-1",
+            "title": "Intex Face Recognition Terminal",
+            "price": "₹ 15,000.00",
+            "image": "/assets/biometrics.png",
+            "description": "Advanced face recognition access terminal with high-speed matching."
+        },
+        {
+            "id": "bio-2",
+            "title": "Intex Fingerprint Access Control",
+            "price": "₹ 6,500.00",
+            "image": "/assets/biometrics.png",
+            "description": "Secure fingerprint biometric reader for attendance and access."
+        },
+        {
+            "id": "bio-3",
+            "title": "Intex RFID Card Reader",
+            "price": "₹ 3,500.00",
+            "image": "/assets/biometrics.png",
+            "description": "Fast and reliable RFID proximity card reader."
+        },
+        {
+            "id": "bio-4",
+            "title": "Intex Multi-Door Controller",
+            "price": "₹ 18,000.00",
+            "image": "/assets/biometrics.png",
+            "description": "Centralized controller for managing multiple biometric access points."
+        }
+    ],
+    "led-tvs": [
+        {
+            "id": "tv-1",
+            "title": "Intex 43\" Smart LED TV",
+            "price": "₹ 24,999.00",
+            "image": "/assets/dome_camera.png",
+            "description": "43-inch Smart LED TV with vibrant colors and rich sound."
+        },
+        {
+            "id": "tv-2",
+            "title": "Intex 55\" 4K UHD LED TV",
+            "price": "₹ 39,999.00",
+            "image": "/assets/dome_camera.png",
+            "description": "Immersive 55-inch 4K Ultra HD smart television."
+        },
+        {
+            "id": "tv-3",
+            "title": "Intex 32\" HD Ready LED TV",
+            "price": "₹ 12,999.00",
+            "image": "/assets/dome_camera.png",
+            "description": "Compact 32-inch HD Ready TV perfect for small rooms."
+        },
+        {
+            "id": "tv-4",
+            "title": "Intex 65\" QLED Smart TV",
+            "price": "₹ 59,999.00",
+            "image": "/assets/dome_camera.png",
+            "description": "Premium 65-inch QLED Smart TV featuring quantum dot technology."
+        }
+    ],
+    "washing-machines": [
+        {
+            "id": "wm-1",
+            "title": "Intex 7kg Fully Auto Washing Machine",
+            "price": "₹ 15,999.00",
+            "image": "/assets/bullet_camera.png",
+            "description": "7kg fully automatic top-load washing machine for efficient cleaning."
+        },
+        {
+            "id": "wm-2",
+            "title": "Intex 8kg Semi Auto Washing Machine",
+            "price": "₹ 10,999.00",
+            "image": "/assets/bullet_camera.png",
+            "description": "8kg semi-automatic washer with powerful pulsator."
+        },
+        {
+            "id": "wm-3",
+            "title": "Intex 9kg Front Load Washing Machine",
+            "price": "₹ 29,999.00",
+            "image": "/assets/bullet_camera.png",
+            "description": "9kg front-load washing machine with advanced fabric care programs."
+        },
+        {
+            "id": "wm-4",
+            "title": "Intex 6.5kg Top Load Washing Machine",
+            "price": "₹ 13,499.00",
+            "image": "/assets/bullet_camera.png",
+            "description": "Compact 6.5kg top-load washer for daily laundry."
+        }
+    ],
+    "fans": [
+        {
+            "id": "fan-1",
+            "title": "Intex High Speed Ceiling Fan",
+            "price": "₹ 2,499.00",
+            "image": "/assets/biometrics.png",
+            "description": "High-efficiency high-speed ceiling fan."
+        },
+        {
+            "id": "fan-2",
+            "title": "Intex Decorative Ceiling Fan",
+            "price": "₹ 3,299.00",
+            "image": "/assets/biometrics.png",
+            "description": "Elegant decorative ceiling fan to match your home interior."
+        },
+        {
+            "id": "fan-3",
+            "title": "Intex BLDC Energy Saving Fan",
+            "price": "₹ 4,500.00",
+            "image": "/assets/biometrics.png",
+            "description": "Super energy-efficient BLDC motor ceiling fan."
+        },
+        {
+            "id": "fan-4",
+            "title": "Intex Pedestal Fan",
+            "price": "₹ 2,999.00",
+            "image": "/assets/biometrics.png",
+            "description": "Adjustable pedestal fan with oscillating functionality."
+        }
+    ],
+    "heaters": [
+        {
+            "id": "heat-1",
+            "title": "Intex 15L Storage Water Heater",
+            "price": "₹ 6,499.00",
+            "image": "/assets/dome_camera.png",
+            "description": "15-liter storage water heater with glasslined tank."
+        },
+        {
+            "id": "heat-2",
+            "title": "Intex 25L Storage Water Heater",
+            "price": "₹ 7,999.00",
+            "image": "/assets/dome_camera.png",
+            "description": "Large 25-liter storage geyser for entire family needs."
+        },
+        {
+            "id": "heat-3",
+            "title": "Intex 3L Instant Water Heater",
+            "price": "₹ 3,499.00",
+            "image": "/assets/dome_camera.png",
+            "description": "Compact 3-liter instant water heater for quick heating."
+        },
+        {
+            "id": "heat-4",
+            "title": "Intex 10L Storage Water Heater",
+            "price": "₹ 5,499.00",
+            "image": "/assets/dome_camera.png",
+            "description": "10-liter water heater perfect for medium usage."
+        }
+    ],
+    "machinery": [
+        {
+            "id": "mach-1",
+            "title": "Intex Industrial Generator",
+            "price": "₹ 1,50,000.00",
+            "image": "/assets/bullet_camera.png",
+            "description": "Heavy duty industrial diesel generator."
+        },
+        {
+            "id": "mach-2",
+            "title": "Intex Heavy Duty Compressor",
+            "price": "₹ 45,000.00",
+            "image": "/assets/bullet_camera.png",
+            "description": "Industrial air compressor with high volume output."
+        },
+        {
+            "id": "mach-3",
+            "title": "Intex Industrial Welding Machine",
+            "price": "₹ 25,000.00",
+            "image": "/assets/bullet_camera.png",
+            "description": "Professional 300A inverter welding machine."
+        },
+        {
+            "id": "mach-4",
+            "title": "Intex Power Press Machine",
+            "price": "₹ 85,000.00",
+            "image": "/assets/bullet_camera.png",
+            "description": "Precision power press machine for manufacturing."
+        }
+    ],
+    "tools": [
+        {
+            "id": "tool-1",
+            "title": "Intex Professional Impact Drill",
+            "price": "₹ 3,499.00",
+            "image": "/assets/biometrics.png",
+            "description": "High-torque professional impact drill for masonry and wood."
+        },
+        {
+            "id": "tool-2",
+            "title": "Intex Angle Grinder 4\"",
+            "price": "₹ 2,199.00",
+            "image": "/assets/biometrics.png",
+            "description": "4-inch angle grinder for cutting and polishing."
+        },
+        {
+            "id": "tool-3",
+            "title": "Intex Circular Saw",
+            "price": "₹ 4,599.00",
+            "image": "/assets/biometrics.png",
+            "description": "Powerful 185mm circular saw for woodworking."
+        },
+        {
+            "id": "tool-4",
+            "title": "Intex Rotary Hammer",
+            "price": "₹ 5,999.00",
+            "image": "/assets/biometrics.png",
+            "description": "Heavy duty SDS-plus rotary hammer drill."
+        }
+    ],
+    "keyboards": [
+        {
+            "id": "kb-1",
+            "title": "Intex Mechanical Gaming Keyboard",
+            "price": "₹ 2,999.00",
+            "image": "/assets/dome_camera.png",
+            "description": "Responsive mechanical keyboard with RGB backlighting."
+        },
+        {
+            "id": "kb-2",
+            "title": "Intex Wireless Keyboard & Mouse Combo",
+            "price": "₹ 1,499.00",
+            "image": "/assets/dome_camera.png",
+            "description": "Reliable 2.4GHz wireless keyboard and mouse set."
+        },
+        {
+            "id": "kb-3",
+            "title": "Intex Ergonomic Office Keyboard",
+            "price": "₹ 999.00",
+            "image": "/assets/dome_camera.png",
+            "description": "Comfortable membrane keyboard engineered for long typing sessions."
+        },
+        {
+            "id": "kb-4",
+            "title": "Intex Backlit Multimedia Keyboard",
+            "price": "₹ 1,299.00",
+            "image": "/assets/dome_camera.png",
+            "description": "Multimedia keyboard with dedicated media keys and subtle backlight."
+        }
+    ],
+    "powerbanks": [
+        {
+            "id": "pb-1",
+            "title": "Intex 10000mAh Power Bank",
+            "price": "₹ 999.00",
+            "image": "/assets/bullet_camera.png",
+            "description": "Slim 10000mAh portable charger with dual output."
+        },
+        {
+            "id": "pb-2",
+            "title": "Intex 20000mAh Fast Charge Power Bank",
+            "price": "₹ 1,999.00",
+            "image": "/assets/bullet_camera.png",
+            "description": "High-capacity 20000mAh power bank with 18W fast charging."
+        },
+        {
+            "id": "pb-3",
+            "title": "Intex 30000mAh Heavy Duty Power Bank",
+            "price": "₹ 2,999.00",
+            "image": "/assets/bullet_camera.png",
+            "description": "Massive 30000mAh power bank for extended trips."
+        },
+        {
+            "id": "pb-4",
+            "title": "Intex Magnetic Wireless Power Bank",
+            "price": "₹ 2,499.00",
+            "image": "/assets/bullet_camera.png",
+            "description": "10000mAh magnetic wireless charging power bank."
+        }
+    ]
+}
